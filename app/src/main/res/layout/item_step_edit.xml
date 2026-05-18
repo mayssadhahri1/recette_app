@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="#23263A"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp">
+
+    <!-- Step number badge -->
+    <TextView
+        android:id="@+id/tvStepNumber"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:text="1"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#2563EB"
+        android:layout_marginEnd="12dp"/>
+
+    <EditText
+        android:id="@+id/etStepItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:hint="Décrivez cette étape..."
+        android:textColorHint="#5B7FA6"/>
+
+    <!-- Delete button -->
+    <ImageButton
+        android:id="@+id/btnDeleteStep"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="#3A3D55"
+        android:src="@android:drawable/ic_delete"
+        android:tint="#FF5252"
+        android:padding="4dp"/>
+
+</LinearLayout>

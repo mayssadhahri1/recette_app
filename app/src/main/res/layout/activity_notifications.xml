@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header avec effet de profondeur -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:elevation="4dp"
+        app:titleTextColor="@android:color/white"
+        app:title="Notifications">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:text="Nouvelles"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- Indicateur de statut -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:layout_margin="8dp"
+        android:elevation="2dp">
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_circle_green" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Notifications récentes"
+            android:textSize="13sp"
+            android:textColor="#666666" />
+
+        <Button
+            android:id="@+id/btnClearAll"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Tout effacer"
+            android:background="@drawable/btn_clear_all"
+            android:textColor="#FF5722"
+            android:textSize="12sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+    </LinearLayout>
+
+    <!-- Liste des notifications -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:scrollbars="vertical" />
+
+    <!-- Message vide élégant -->
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_circle_gray"
+            android:gravity="center"
+            android:text="🔔"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Aucune notification"
+            android:textColor="#999999"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Les notifications apparaîtront ici"
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

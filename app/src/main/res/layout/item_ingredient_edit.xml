@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <!-- Blue dot bullet -->
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="#2563EB"
+            android:layout_marginEnd="12dp"/>
+
+        <EditText
+            android:id="@+id/etIngredientItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:hint="Ingrédient..."
+            android:textColorHint="#5B7FA6"/>
+
+        <!-- Up/Down arrows -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="▲"
+                android:textColor="#5B7FA6"
+                android:textSize="10sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="▼"
+                android:textColor="#5B7FA6"
+                android:textSize="10sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Delete button -->
+        <ImageButton
+            android:id="@+id/btnDeleteIngredient"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="#3A3D55"
+            android:src="@android:drawable/ic_delete"
+            android:tint="#FF5252"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2A2D45"/>
+
+</LinearLayout>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAF7">
+
+    <!-- HEADER -->
+    <FrameLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D0D0D"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="24dp">
+
+        <!-- Cercle décoratif -->
+        <View
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-50dp"
+            android:layout_marginEnd="-30dp"
+            android:background="@drawable/bg_ring_orange"
+            android:alpha="0.15" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="18dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvGreeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mercredi 7 mai"
+                        android:textColor="#888888"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mes Recettes"
+                        android:textColor="#FAFAF7"
+                        android:textSize="22sp"
+                        android:fontFamily="serif"
+                        android:textStyle="bold"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Bouton Notification -->
+                <FrameLayout
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnNotifications"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="#1E1E1E"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#2E2E2E"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_bell"
+                            app:tint="#FAFAF7" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/notifDot"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/bg_notif_dot"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <!-- Bouton Calendrier/Planning -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnCalendar"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    app:cardBackgroundColor="#1E1E1E"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#2E2E2E"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="#FAFAF7" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Barre de recherche -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_search_dark"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="#666666" />
+
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Rechercher une recette..."
+                    android:textColorHint="#555555"
+                    android:textColor="#FAFAF7"
+                    android:textSize="13sp"
+                    android:paddingStart="10dp"
+                    android:fontFamily="sans-serif" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- FILTRE CATÉGORIES -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="6dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAll"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Tout"
+                    android:textSize="11sp"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:checkedIconVisible="false"
+                    android:checked="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipEntrees"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Entrées"
+                    android:textSize="11sp"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:checkedIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPlats"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Plats"
+                    android:textSize="11sp"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:checkedIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDesserts"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Desserts"
+                    android:textSize="11sp"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:checkedIconVisible="false" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- TITRE SECTION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Vos recettes"
+            android:textSize="17sp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textColor="#0D0D0D" />
+
+        <TextView
+            android:id="@+id/tvRecipeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 recettes"
+            android:textSize="11sp"
+            android:textColor="#FF6B35"
+            android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+
+    <!-- RECYCLER VIEW -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false" />
+
+    <!-- BOUTON AJOUT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@drawable/bg_fab_gradient">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="+ Ajouter une recette"
+            android:textSize="13sp"
+            android:letterSpacing="0.05"
+            android:backgroundTint="#0D0D0D"
+            android:textColor="#FAFAF7"
+            app:cornerRadius="16dp"
+            app:elevation="0dp"
+            app:icon="@drawable/ic_add"
+            app:iconTint="#FF6B35" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMap"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Voir restaurants 🗺"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#FF6B35"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="16dp"/>
+
+</LinearLayout>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1C2E"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- TOP BAR -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#1A1C2E"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:background="#2A2D45"
+                android:src="@android:drawable/ic_media_previous"
+                android:tint="#FFFFFF"
+                android:padding="6dp"/>
+
+            <Button
+                android:id="@+id/btnCameraTop"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="⊕ Changer la photo"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:backgroundTint="#2A2D45"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"/>
+        </RelativeLayout>
+
+        <!-- IMAGE ZONE -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#2A2D45">
+
+            <ImageView
+                android:id="@+id/imgRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_camera"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Aucune photo sélectionnée"
+                android:textColor="#8A9BB0"
+                android:textSize="13sp"/>
+
+
+        </FrameLayout>
+
+        <!-- MAIN CONTENT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvRecipeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modifier les informations de votre recette"
+                android:textSize="12sp"
+                android:textColor="#8A9BB0"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- SECTION LABEL -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INFORMATIONS GÉNÉRALES"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#5B7FA6"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- TITRE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titre de la recette"
+                android:textSize="11sp"
+                android:textColor="#8A9BB0"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_input_dark"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#5B7FA6"
+                android:hint="Titre de la recette"
+                android:textSize="14sp"
+                android:layout_marginBottom="12dp"
+                android:inputType="text"/>
+
+            <!-- DESCRIPTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="11sp"
+                android:textColor="#8A9BB0"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/bg_input_dark"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="10dp"
+                android:gravity="top"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#5B7FA6"
+                android:hint="Description de la recette..."
+                android:textSize="14sp"
+                android:layout_marginBottom="12dp"
+                android:inputType="textMultiLine"/>
+
+            <!-- PORTIONS + TEMPS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Portions"
+                        android:textSize="11sp"
+                        android:textColor="#8A9BB0"
+                        android:layout_marginBottom="4dp"/>
+
+                    <EditText
+                        android:id="@+id/etPortions"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_input_dark"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textColor="#FFFFFF"
+                        android:hint="ex: 4 pers."
+                        android:textColorHint="#5B7FA6"
+                        android:textSize="14sp"
+                        android:inputType="text"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Temps total"
+                        android:textSize="11sp"
+                        android:textColor="#8A9BB0"
+                        android:layout_marginBottom="4dp"/>
+
+                    <EditText
+                        android:id="@+id/etTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_input_dark"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textColor="#FFFFFF"
+                        android:hint="ex: 45 min"
+                        android:textColorHint="#5B7FA6"
+                        android:textSize="14sp"
+                        android:inputType="text"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- CATÉGORIE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catégorie"
+                android:textSize="11sp"
+                android:textColor="#8A9BB0"
+                android:layout_marginBottom="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_input_dark"
+                android:paddingStart="14dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- DIFFICULTÉ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difficulté"
+                android:textSize="11sp"
+                android:textColor="#8A9BB0"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btnFacile"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:text="Facile"
+                    android:textSize="13sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#2A2D45"/>
+
+                <Button
+                    android:id="@+id/btnMoyen"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:text="Moyen"
+                    android:textSize="13sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#2563EB"/>
+
+                <Button
+                    android:id="@+id/btnDifficile"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="Difficile"
+                    android:textSize="13sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#2A2D45"/>
+            </LinearLayout>
+
+            <!-- SECTION: INGRÉDIENTS -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INGRÉDIENTS"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#5B7FA6"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/layoutIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_input_dark"
+                android:padding="4dp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnAddIngredient"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="+ Ajouter un ingrédient"
+                android:textColor="#2563EB"
+                android:textSize="13sp"
+                android:backgroundTint="#1E2440"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- SECTION: ÉTAPES -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ÉTAPES DE PRÉPARATION"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#5B7FA6"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/layoutSteps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnAddStep"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="+ Ajouter une étape"
+                android:textColor="#2563EB"
+                android:textSize="13sp"
+                android:backgroundTint="#1E2440"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- CONSEILS DU CHEF -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONSEILS DU CHEF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#5B7FA6"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#2A2010"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:text="💡"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:id="@+id/etTips"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="Conseils du chef..."
+                    android:textColorHint="#A08030"
+                    android:textColor="#F5C842"
+                    android:textSize="13sp"
+                    android:inputType="textMultiLine"/>
+            </LinearLayout>
+
+            <!-- BOTTOM BUTTONS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="32dp">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Annuler"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#2A2D45"/>
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="2"
+                    android:text="✎ Enregistrer les modifications"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:backgroundTint="#2563EB"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

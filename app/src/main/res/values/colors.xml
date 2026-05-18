@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#0288D1</color>
+    <color name="blue_dark">#01579B</color>
+    <color name="gray">#808080</color>
+    <color name="teal_700">#00796B</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="accent">#FF4081</color>
+    <color name="notification_unread">#FFF3E0</color>
+
+    <color name="green_dark">#1C3A2F</color>
+    <color name="orange_main">#D4853A</color>
+    <color name="cream_bg">#FBF8F3</color>
+    <color name="tab_inactive_text">#8A8A8A</color>
+    <color name="input_border">#E0DDD5</color>
+    <color name="input_hint">#C0BBB0</color>
+
+
+
+    <color name="blue_primary">#2563EB</color>
+    <color name="surface_dark">#2A2D45</color>
+    <color name="background_dark">#1A1C2E</color>
+    <color name="input_dark">#23263A</color>
+    <color name="text_secondary">#8A9BB0</color>
+    <color name="text_label">#5B7FA6</color>
+    <color name="tips_yellow">#F5C842</color>
+    <color name="red_delete">#FF5252</color>
+
+</resources>
